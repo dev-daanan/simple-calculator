@@ -11,7 +11,7 @@ public class InputParser {
      * @param prompt - prompt for input
      * @return double
      */
-    public double getInput(String prompt) {
+    public double getDoubleInput(String prompt) {
         System.out.println(prompt);
         double inputDouble;
         do {
@@ -23,6 +23,35 @@ public class InputParser {
                 continue;
             }
             return inputDouble;
+        } while (true);
+    }
+
+    public int getIntInput(String prompt) {
+        System.out.println(prompt);
+        int inputInt;
+        do {
+            try {
+                String inputString = scanner.nextLine();
+                inputInt = Integer.parseInt(inputString);
+            } catch (NumberFormatException | NullPointerException | InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number. Try again.");
+                continue;
+            }
+            return inputInt;
+        } while (true);
+    }
+
+    public String getStringInput(String prompt) {
+        System.out.println(prompt);
+        String inputString;
+        do {
+            try {
+                inputString = scanner.nextLine();
+            } catch (NumberFormatException | NullPointerException | InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a string. Try again.");
+                continue;
+            }
+            return inputString;
         } while (true);
     }
 

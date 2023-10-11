@@ -7,4 +7,9 @@ public class Multiplication  implements Operable {
     public double performOperation(double a, double b) {
         return a * b;
     }
+
+    @Override
+    public String toString() {
+        return "*";
+    }
 }
