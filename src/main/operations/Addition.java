@@ -1,4 +1,10 @@
 package src.main.operations;
 
-public class Addition {
+import src.main.interfaces.Operable;
+
+public class Addition implements Operable {
+    @Override
+    public double performOperation(double a, double b) {
+        return a + b;
+    }
 }
