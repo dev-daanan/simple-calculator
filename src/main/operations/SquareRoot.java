@@ -2,24 +2,20 @@ package src.main.operations;
 
 import src.main.enums.OperatorType;
 import src.main.interfaces.Operable;
-import src.main.util.InputParser;
 
-public class Division implements Operable {
+public class SquareRoot implements Operable {
     @Override
     public double performOperation(double a, double b) {
-        while (b == 0) {
-            b = new InputParser().getDoubleInput("b cannot be zero, try again: ");
-        }
-        return a / b;
+        return Math.sqrt(a);
     }
 
     @Override
     public OperatorType getOperationType() {
-        return OperatorType.DIVISION;
+        return OperatorType.SQUARE_ROOT;
     }
 
     @Override
     public String toString() {
-        return "/";
+        return "SquareRoot";
     }
 }
