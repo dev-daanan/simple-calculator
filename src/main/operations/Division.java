@@ -8,7 +8,7 @@ public class Division implements Operable {
     @Override
     public double performOperation(double a, double b) {
         while (b == 0) {
-            b = new InputParser().getDoubleInput("b cannot be zero, try again: ");
+            b = new InputParser().getDoubleInput("Cannot divide by zero, try again: ");
         }
         return a / b;
     }
