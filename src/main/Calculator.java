@@ -1,5 +1,6 @@
 package src.main;
 
+import src.main.customexceptions.CalculatorException;
 import src.main.enums.OperatorType;
 import src.main.interfaces.Operable;
 import src.main.operations.*;
@@ -19,7 +20,7 @@ public class Calculator {
         while (operation == null) {
             try {
                 operation = OperationFactory.getOperation(inputParser.getStringInput("Enter operator (" + OperatorType.getTypeSigns() + "):"));
-            } catch (IllegalArgumentException e) {
+            } catch (CalculatorException e) {
                 System.out.println("Invalid input. Try again.");
             }
         }
